@@ -30,6 +30,15 @@ services:
             - db-data:/var/lib/mysql
         ports:
             - "${DB_PORT:-3306}:3306"
+    node:
+        image: node:22-alpine
+        user: ${UID:-1000}:${GID:-1000}
+        command: npm run dev
+        ports:
+            - 3000:3000
+        volumes:
+            - .:/app
+        working_dir: /app
 
 volumes:
     db-data:

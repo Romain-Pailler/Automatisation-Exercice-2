@@ -9,11 +9,24 @@
         "slim/twig-view": "^3.3",
         "slim/flash": "^0.4.0",
         "illuminate/database": "^11.0",
-        "symfony/console": "^7.0"
+        "symfony/console": "^7.0",
+        "fakerphp/faker": "^1.24"
     },
     "autoload": {
         "psr-4": {
             "App\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "squizlabs/php_codesniffer": "^3.11"
+    },
+    "scripts": {
+        "phpcs": "vendor/bin/phpcs",
+        "phpcs:fix": "vendor/bin/phpcbf",
+        "phpstan": "vendor/bin/phpstan analyse",
+        "lint": "eslint --ext .js,.vue --ignore-path .gitignore",
+        "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore"
     }
-}
+    }
+
